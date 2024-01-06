@@ -1,0 +1,33 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <div v-on:mousemove="atualizarXEY">
+        <p>Mouse {{x}} e {{y}}</p>
+        <p v-on:mousemove="parar">o evento para aqui </p>
+    </div>
+    <a v-on:click.prevent="confirmar" v-bind:href="link">Spotify</a>
+</div>
+
+<script>
+    const coordenadas = new Vue({
+        el:'#app',
+        data:{
+            x: 0,
+            y: 0,
+            link: "https://spotify.com"
+        },
+        methods:{
+            atualizarXEY(e){
+                this.x = e.clientX
+                this.y = e.clientY
+            },
+            parar(e){
+                e.stopPropagation()
+            },
+            confirmar(){
+                if(confirm("Deseja seguir para o link externo?"))
+                    window.location = this.link 
+            }
+        }
+    })
+</script>

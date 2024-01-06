@@ -1,0 +1,45 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<style>
+   #caixas{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo{
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        display: flex;
+        justify-content: space-between;
+    }
+
+</style>
+<div id="app">
+    <div id="caixas">
+        <div class="demo" :style="{backgroundColor:cor}"></div>
+        <div class="demo" :style="meuEstilo"></div>
+        <div class="demo" ></div>
+    </div>
+    <hr>
+    <!-- altera a cor dinamicamente-->
+    <input type="text" v-model="cor">
+    <input type="number" v-model="largura">
+</>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+           cor: '',
+           largura: 100
+        },
+        computed: {
+            meuEstilo() {
+                return {
+                    backgroundColor: this.cor,
+                    width: `${this.largura}px`
+                } 
+            }
+        }
+    })
+</script>

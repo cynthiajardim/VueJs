@@ -20,7 +20,6 @@
         //uma função computada irá executar apenas se alguma de suas propriedades sofrerem alteração. Ex: se contador for alterado a resultado() será executada, do contrário, não. 
         computed:{
              resultado(){
-                console.log("resultado chamado")
                 return this.contador >= 5 ? 'Maior ou igual a 5.' : 'Menor do que 5.'
             }
         },

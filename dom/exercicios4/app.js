@@ -1,19 +1,19 @@
 new Vue({
 	el: '#desafio',
 	data: {
-		classe1: 'destaque',
-		corBackground: 'c1',
-		largura: 'tamanhoM',
-		classeUsuario: '',
-		corQuadrado: 'c1',
-		aplicarClasse: false,
-		width: 0
+		classe: 'destaque',
+		classe01: 'seguro',
+		classe02: 'medio',
+		classe03: '',
+		classe04: '',
+		aplicarClasse: '',
+		width: ''
 
 	},
 	methods: {
 		iniciarEfeito() {
 			setInterval(() => {
-				this.classe1 = this.classe1 == 'destaque' ? 'encolher' : 'destaque'
+				this.classe = this.classe == 'destaque' ? 'encolher' : 'destaque'
 			}, 1000)
 		},
 		iniciarProgresso() {
@@ -23,6 +23,16 @@ new Vue({
 				this.width = `${valor}%`
 				if(valor == 100) clearInterval(temporizador)
 			}, 500)
+		},
+		setAplicarClasse(e){
+			if(e.target.value == 'true')
+				this.aplicarClasse = true
+			else if(e.target.value == 'false')
+				this.aplicarClasse = false
+
+			console.log(this.aplicarClasse);
+
+			
 		}
 	}
 })

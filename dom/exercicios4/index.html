@@ -9,29 +9,29 @@
 	<h2>#01</h2>
 	<div>
 		<button @click="iniciarEfeito">Iniciar Efeito</button>
-		<div id="efeito" :class="classe1"></div>
+		<div id="efeito" :class="classe"></div>
 	</div>
 	
 	<!-- 2) Crie duas classes CSS e associe a div usando a
 		sintaxe de array -->
 	<h2>#02</h2>
-	<div :class="[corBackground, largura]"></div>
+	<div :class="[classe01, classe02]"></div>
 
 	<!-- 3) Aplique na div abaixo a classe informada pelo usuário
 		(crie classe CSS de exemplo). -->
 	<h2>#03</h2>
 	<div>
-		<input type="text" v-model="classeUsuario">
-		<div :class="classeUsuario"></div>
+		<input type="text" v-model="classe03">
+		<div :class="classe03"></div>
 	</div>
 
 	<!-- 4) Aplique na div abaixo a classe informada pelo usuário e
     outra classe usando o valor true/false (crie classes CSS de exemplo). -->
 	<h2>#04</h2>
 	<div>
-		<input type="text" v-model="aplicarClasse" placeholder="Add: true, remover: false">
-		<input type="text" v-model="corQuadrado" placeholder="cores: azul, verde, amarelo, cinza, preto...">
-		<div class="tamanhoM" :class="{'corQuadrado':aplicarClasse}"></div>
+		<input type="text" @input="setAplicarClasse">
+		<input type="text" v-model="classe04">
+		<div :class="[classe04, {aplicarClasse}]"></div>
 	</div>
 
 	<!-- 5) Repita 3) mas utilizando estilos ao invés de classes CSS.

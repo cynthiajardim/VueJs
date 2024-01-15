@@ -16,23 +16,56 @@
 
 .c1 {
 	background-color: blueviolet;
+	width: 50px;
+	height: 50px;
 }
 .c2 {
 	background-color:aqua;
+	width: 50px;
+	height: 50px;
 }
 .c3 {
 	background-color: rgb(173, 157, 188);
+	width: 50px;
+	height: 50px;
 }
 .c4 {
 	background-color: rgb(226, 43, 208);
+	width: 50px;
+	height: 50px;
 }
 .c5 {
 	background-color: rgb(129, 179, 250);
-}
-
-.tamanhoM {
 	width: 50px;
 	height: 50px;
+
+}
+
+.seguro{
+	background-color: green;
+	height: 50px;
+	width: 50px;
+}
+
+.perigo{
+	background-color: red;
+	height: 50px;
+	width: 50px;
+}
+
+.pequeno{
+	height: 20px;
+	width: 20px;
+}
+
+.medio{
+	height: 60px;
+	width: 60px;
+}
+
+.grande{
+	height: 100px;
+	width: 100px;
 }
 
 .barra-progresso {

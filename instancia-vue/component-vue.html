@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <!-- tag que utiliza o mesmo nome do componente -->
+    <comp></comp>
+</div>
+
+<script>
+    //registrando component de forma global no vue
+    Vue.component('comp', {
+        template: `
+            <div>
+                <h1 ref="prop">{{title}}</h1>
+                <button @click="alterTitle">!</button>
+            </div>
+        `,
+        data:function(){
+            return{
+                title: 'test'
+            }
+        },
+        methods:{
+            alterTitle(){
+                this.title += '!'
+            },
+        }
+    })
+
+    const vm = new Vue({
+        el:"#app",
+    })
+</script>

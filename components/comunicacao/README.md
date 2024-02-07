@@ -1,4 +1,4 @@
-# component-intro
+# comunicacao
 
 ## Project setup
 ```

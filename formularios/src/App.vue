@@ -2,7 +2,7 @@
 	<div id="app">
 		<h1>Registrar Reclamação</h1>
 		<div class="conteudo">
-			<form class="painel">
+			<form class="painel" v-if="!enviado">
 				<div class="cabecalho">Formulário</div>
 				<Rotulo nome="E-mail">
 					<!-- o lazy atualiza o resultado apenas quando saímos do campo, e o trim remove os espaços extraas digitados -->
@@ -44,9 +44,10 @@
 					<Escolha v-model="escolha" />
 				</Rotulo>
 				<hr>
-				<button>Enviar</button>
+				<!-- prevent previne que o botão não execute o comportamento padrão (submit), pois queremos apenas mudar o valor de enviado, e não submeter o formulário realmente -->
+				<button @click.prevent="enviar">Enviar</button>
 			</form>
-			<div class="painel">
+			<div class="painel" v-else>
 				<div class="cabecalho">Resultado</div>
 				<Rotulo nome="E-mail">
 					<span>{{usuario.email}}</span>
@@ -100,7 +101,13 @@ export default {
 				{codigo:2, nome:'moderada'},
 				{codigo:3, nome:'alta'}
 			],
-			escolha: true
+			escolha: true,
+			enviado: false
+		}
+	},
+	methods:{
+		enviar(){
+			this.enviado = true
 		}
 	}
 }
